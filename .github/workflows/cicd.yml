@@ -26,19 +26,19 @@ jobs:
 
       - name: Build, tag, and push image to Amazon ECR
         run: |
-          docker build -t mediplus:v2 .
+          docker build -t mediplus .
           docker tag mediplus:v2 public.ecr.aws/k1r2b0e3/mediplus:v2
           docker push public.ecr.aws/k1r2b0e3/mediplus:v2
 
 
 
 
-    deploy:
-    runs-on: ubuntu-latest
-    needs: build-push
-    steps:
-      - name: Check my ssh key
-        run: |
-          echo "${{ secrets.SSH_KEY }}" > mykey.pem
-          chmod 400 mykey.pem
-          cat mykey.pem 
+    # deploy:
+    # runs-on: ubuntu-latest
+    # needs: build-push
+    # steps:
+    #   - name: Check my ssh key
+    #     run: |
+    #       echo "${{ secrets.SSH_KEY }}" > mykey.pem
+    #       chmod 400 mykey.pem
+    #       cat mykey.pem 
