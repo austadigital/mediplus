@@ -27,6 +27,6 @@ jobs:
       - name: Build, tag, and push image to Amazon ECR
         run: |
           docker build -t mediplus:v1 .
-          docker tag mediplus:v1 892004491300.dkr.ecr.eu-north-1.amazonaws.com/mediplus:v1
-          docker push 892004491300.dkr.ecr.eu-north-1.amazonaws.com/mediplus:v1
+          docker tag mediplus:v1 public.ecr.aws/k1r2b0e3/mediplus:v1
+          docker push public.ecr.aws/k1r2b0e3/mediplus:v1
 
